@@ -63,6 +63,11 @@ aside > h1 {
   justify-content: space-evenly;
 }
 
+.input-form > button {
+  background-color: #1F1F3D;
+  color: #E9E9F3;
+}
+
 .title-input,
 .body-input {
   display: flex;
@@ -71,6 +76,16 @@ aside > h1 {
 
 .search-input {
   display: flex;
+  width: 100%;
+}
+
+.search-input > input {
+  width: 90%;
+}
+
+.search-input > img {
+  width: 10%;
+  height: auto;
 }
 
 .idea-gallery {
