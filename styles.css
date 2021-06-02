@@ -1,0 +1,26 @@
+* {
+  border: 2px solid green;
+  font-family: Open Sans;
+
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+main > span {
+  width: 30%;
+  height: 100%;
+}
+
+main > section {
+  width: 70%;
+  height: 100%;
+}
