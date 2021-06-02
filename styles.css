@@ -17,6 +17,7 @@ main {
 main > aside {
   width: 30%;
   height: 100%;
+  background-color: #1f1f3D;
 }
 
 main > section {
@@ -24,7 +25,24 @@ main > section {
   height: 100%;
 }
 
+aside > h1 {
+  color: #E9E9F3;
+}
+
+.filter-ideas > h2 {
+  color: #BFBFDD;
+}
+
+.filter-ideas > button {
+  color: #E9E9F3;
+  background-color: #5356A4;
+  width: 80%;
+  height: 4%;
+  font-weight: bolder;
+}
+
 .user-form {
+  background-color: #A9AAD2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,4 +58,10 @@ main > section {
 
 .search-input {
   display: flex;
+}
+
+.idea-gallery {
+  background-color: #EAEAF4;
+  display: flex;
+  height: 60%;
 }
