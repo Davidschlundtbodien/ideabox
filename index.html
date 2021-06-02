@@ -9,19 +9,26 @@
   </head>
   <body>
     <main>
-      <span>
+      <aside>
         <h1>IdeaBox</h1>
         <h2>Filter Starred Ideas</h2>
         <button type="button" name="Show Starred Ideas"></button>
-      </span>
+      </aside>
       <section>
         <article class="user-form" id="userForm">
+          <div class="title-input">
           <label for="Title">Title</label>
           <input type="text" name="Title" value="">
+        </div>
+        <div class="body-input">
           <label for="Body">Body</label>
-          <textarea name="name" rows="8" cols="80"></textarea>
-          <button type="button" name="Save"></button>
+          <textarea name="name" rows="4" cols="40"></textarea>
+        </div>
+        <button type="button" name="submit-input">Save</button>
+        <div class="search-input">
+          <!-- <img src="./assets/icons/search.svg"/> -->
           <input type="text" name="Search ideas" value="Search ideas">
+        </div>
         </article>
         <article class="idea-gallery">
 
@@ -29,6 +36,6 @@
       </section>
     </main>
   </body>
-  <script src="./src/Idea.js"></script>
-  <script src="./src/main.js"></script>
+  <script src="./Idea.js"></script>
+  <script src="./main.js"></script>
 </html>
