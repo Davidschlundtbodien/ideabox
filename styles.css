@@ -1,5 +1,5 @@
 * {
-  border: 2px solid green;
+  /* border: 2px solid green; */
   font-family: Open Sans;
 }
 
@@ -98,25 +98,41 @@ aside > h1 {
   display: flex;
   flex-direction: column;
   max-width: 30%;
-  max-height: 9%;
+  height: 50%;
+  border: 2px solid #1F1F3D;
+  justify-content: space-between;
+  margin: 10px;
 
+}
+
+.idea-card-body {
+margin: auto 10px;
 }
 
 .idea-card-head {
   background: #1F1F3D;
+  display: flex;
+  justify-content: space-between;
 }
 
 .idea-card-foot {
   background: #5356A4;
   color: #E9E9F3;
+  display: flex;
+  font-weight: bold;
 }
 
 .idea-card-head > img {
-  width: 20px;
+  width: 10%;
   height: auto;
 }
 
 .idea-card-foot > img {
-  width: 20px;
+  width: 10%;
   height: auto;
+}
+
+.idea-card-foot > p {
+  margin-block-start: .3em;
+  margin-block-end: .3em;
 }
