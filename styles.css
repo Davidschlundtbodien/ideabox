@@ -1,11 +1,12 @@
 * {
-  border: 2px solid green;
+  /* border: 2px solid green; */
   font-family: Open Sans;
 }
 
 body {
   width: 100%;
   height: 100vh;
+
 }
 
 main {
@@ -15,13 +16,13 @@ main {
 }
 
 main > aside {
-  width: 30%;
+  width: 20%;
   height: 100%;
   background-color: #1f1f3D;
 }
 
 main > section {
-  width: 70%;
+  width: 80%;
   height: 100%;
 }
 
@@ -92,4 +93,51 @@ aside > h1 {
   background-color: #EAEAF4;
   display: flex;
   height: 60%;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.idea-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 30%;
+  height: 50%;
+  border: 2px solid #1F1F3D;
+  justify-content: space-between;
+
+}
+
+.idea-card-body {
+  padding: 10px;
+  height: 100%;
+  background: #FFFFFF;
+}
+
+.idea-card-head {
+  background: #1F1F3D;
+  display: flex;
+  justify-content: space-between;
+}
+
+.idea-card-foot {
+  background: #5356A4;
+  color: #E9E9F3;
+  display: flex;
+  font-weight: bold;
+}
+
+.idea-card-head > img {
+  width: 10%;
+  height: auto;
+}
+
+.idea-card-foot > img {
+  width: 10%;
+  height: auto;
+}
+
+.idea-card-foot > p {
+  margin-block-start: .3em;
+  margin-block-end: .3em;
 }
