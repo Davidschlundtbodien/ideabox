@@ -93,3 +93,30 @@ aside > h1 {
   display: flex;
   height: 60%;
 }
+
+.idea-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 30%;
+  max-height: 9%;
+
+}
+
+.idea-card-head {
+  background: #1F1F3D;
+}
+
+.idea-card-foot {
+  background: #5356A4;
+  color: #E9E9F3;
+}
+
+.idea-card-head > img {
+  width: 20px;
+  height: auto;
+}
+
+.idea-card-foot > img {
+  width: 20px;
+  height: auto;
+}
