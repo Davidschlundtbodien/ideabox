@@ -4,17 +4,18 @@ var ideas = [];
 //Query Selectors
 var ideaGallery = document.querySelector("#idea-gallery");
 var submitIdeaButton = document.querySelector("#submit-idea-button");
+var titleInput = document.querySelector("#title-input");
+var bodyInput = document.querySelector("#body-input");
 
 //Event Listeners
 submitIdeaButton.addEventListener("click", createIdea);
 
 //Event Handlers
 function createIdea() {
-var titleInput = document.querySelector("#title-input").value;
-var bodyInput = document.querySelector("#body-input").value;
-var userIdea = new Idea(titleInput, bodyInput);
-userIdea.saveToStorage(ideas);
-displayGallery();
+  var userIdea = new Idea(titleInput.value, bodyInput.value);
+  userIdea.saveToStorage(ideas);
+  displayGallery();
+  clearValues();
 };
 
 function displayGallery() {
@@ -37,4 +38,9 @@ function displayGallery() {
       </div>
     `
   }
-}
+};
+
+function clearValues() {
+  titleInput.value = "";
+  bodyInput.value = "";
+};
