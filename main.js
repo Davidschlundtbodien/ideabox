@@ -6,6 +6,7 @@ var ideaGallery = document.querySelector("#idea-gallery");
 var submitIdeaButton = document.querySelector("#submit-idea-button");
 var titleInput = document.querySelector("#title-input");
 var bodyInput = document.querySelector("#body-input");
+var ideaCard = document.querySelector(".idea-card");
 
 //Event Listeners
 submitIdeaButton.addEventListener("click", createIdea);
@@ -23,18 +24,34 @@ function createIdea() {
 };
 
 function click(event) {
-  var click = event.target
-  // console.log(click);
+  var click = event.target;
   if (event.target.classList.contains("remove-card")) {
-    var cardID = event.target.closest("div").id;
-    var cardDate = event.target.closest(".idea-card").id;
-    console.log(cardDate);
-    }
-  for (var i = 0; i<ideas.length; i++) {
-    if (ideas[i].id === cardDate) {
-      splice(i, 1)
+    var cardDate = Number(event.target.closest(".idea-card").id);
+    for (var i = 0; i<ideas.length; i++) {
+      if (ideas[i].id === cardDate) {
+      // ideaGallery.innerHTML -=
+      // `  <div class="idea-card" id="${ideas[i].id}">
+      //       <section class="idea-card-head">
+      //         <img src="assets/icons/star.svg" alt="star" class="favorite-card">
+      //         <img src="assets/icons/delete.svg" alt="delete" class="remove-card">
+      //       </section>
+      //       <article class="idea-card-body">
+      //         <h4>${ideas[i].title}</h4>
+      //         <p>${ideas[i].body}</p>
+      //       </article>
+      //       <section class="idea-card-foot">
+      //         <img src="assets/icons/comment.svg" alt="comment">
+      //         <p>Comment</p>
+      //       </section>
+      //   </div>
+      // `
+      ideas.splice(i, 1);
+      ideaCard.classList.add(".hidden");
+      console.log(cardDate);
     }
   }
+  console.log(ideas);
+}
 }
 
 
