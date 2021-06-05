@@ -65,8 +65,13 @@ aside > h1 {
 }
 
 .input-form > button {
-  background-color: #1F1F3D;
+  background-color: #353567;
   color: #E9E9F3;
+  font-weight: bold;
+}
+
+button:disabled {
+  background-color: grey;
 }
 
 .title-input,

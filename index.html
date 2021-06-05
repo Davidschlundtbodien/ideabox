@@ -21,76 +21,21 @@
           <section class="input-form">
             <div class="title-input">
               <label for="Title">Title</label>
-              <input type="text" name="Title" value="">
+              <input type="text" name="Title" value="" id="title-input">
             </div>
             <div class="body-input">
               <label for="Body">Body</label>
-              <textarea name="name" rows="4" cols="40"></textarea>
+              <textarea name="name" rows="4" cols="40" id="body-input"></textarea>
             </div>
-            <button type="button" name="submit-input">Save</button>
+            <button type="button" name="submit-input" id="submit-idea-button" disabled="disabled">Save</button>
             <div class="search-input">
               <img src="./assets/icons/search.svg"/>
               <input type="text" name="Search ideas" value="Search ideas">
             </div>
           </section>
         </article>
-        <article class="idea-gallery">
-          <div class="idea-card">
-              <section class="idea-card-head">
-                <img src="assets/icons/star.svg" alt="star">
-                <img src="assets/icons/delete.svg" alt="delete">
-              </section>
-              <article class="idea-card-body">
-                <h4>Idea Title</h4>
-                <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, lion! Cloth talk.</p>
-              </article>
-              <section class="idea-card-foot">
-                <img src="assets/icons/comment.svg" alt="comment">
-                <p>Comment</p>
-              </section>
-          </div>
-          <div class="idea-card">
-              <section class="idea-card-head">
-                <img src="assets/icons/star.svg" alt="star">
-                <img src="assets/icons/delete.svg" alt="delete">
-              </section>
-              <article class="idea-card-body">
-                <h4>Idea Title</h4>
-                <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, lion! Cloth talk.</p>
-              </article>
-              <section class="idea-card-foot">
-                <img src="assets/icons/comment.svg" alt="comment">
-                <p>Comment</p>
-              </section>
-          </div>
-          <div class="idea-card">
-              <section class="idea-card-head">
-                <img src="assets/icons/star.svg" alt="star">
-                <img src="assets/icons/delete.svg" alt="delete">
-              </section>
-              <article class="idea-card-body">
-                <h4>Idea Title</h4>
-                <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, lion! Cloth talk.</p>
-              </article>
-              <section class="idea-card-foot">
-                <img src="assets/icons/comment.svg" alt="comment">
-                <p>Comment</p>
-              </section>
-          </div>
-          <div class="idea-card">
-              <section class="idea-card-head">
-                <img src="assets/icons/star.svg" alt="star">
-                <img src="assets/icons/delete.svg" alt="delete">
-              </section>
-              <article class="idea-card-body">
-                <h4>Idea Title</h4>
-                <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, lion! Cloth talk.</p>
-              </article>
-              <section class="idea-card-foot">
-                <img src="assets/icons/comment.svg" alt="comment">
-                <p>Comment</p>
-              </section>
-          </div>
+        <article class="idea-gallery" id="idea-gallery">
+          <!-- Idea cards go here -->
         </article>
       </section>
     </main>
