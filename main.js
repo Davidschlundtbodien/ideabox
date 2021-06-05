@@ -9,6 +9,8 @@ var bodyInput = document.querySelector("#body-input");
 
 //Event Listeners
 submitIdeaButton.addEventListener("click", createIdea);
+titleInput.addEventListener("keyup", checkForm);
+bodyInput.addEventListener("keyup", checkForm);
 
 //Event Handlers
 function createIdea() {
@@ -16,6 +18,7 @@ function createIdea() {
   userIdea.saveToStorage(ideas);
   displayGallery();
   clearValues();
+  checkForm();
 };
 
 function displayGallery() {
@@ -43,4 +46,12 @@ function displayGallery() {
 function clearValues() {
   titleInput.value = "";
   bodyInput.value = "";
+};
+
+function checkForm() {
+  if (titleInput.value.length > 0 && bodyInput.value.length > 0) {
+    submitIdeaButton.disabled = false;
+  } else {
+    submitIdeaButton.disabled = true;
+  }
 };
