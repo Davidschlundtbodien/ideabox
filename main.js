@@ -12,7 +12,7 @@ var bodyInput = document.querySelector("#body-input");
 submitIdeaButton.addEventListener("click", createIdea);
 titleInput.addEventListener("keyup", checkForm);
 bodyInput.addEventListener("keyup", checkForm);
-ideaGallery.addEventListener("click", click);
+ideaGallery.addEventListener("click", clickRender);
 
 //Event Handlers
 function createIdea() {
@@ -23,20 +23,51 @@ function createIdea() {
   checkForm();
 };
 
-function click(event) {
+// ---- can delete the below commented, updated belwo -----
+// 
+// function clickRender(event) {
+//   var click = event.target;
+//   if (event.target.classList.contains("remove-card")) {
+//     var cardDate = Number(event.target.closest(".idea-card").id);
+//     for (var i = 0; i<ideas.length; i++) {
+//       if (ideas[i].id === cardDate) {
+//         ideas.splice(i, 1);
+//         displayGallery();
+//       }
+//     }
+//   console.log(ideas);
+//   }
+// }
+
+
+// ----- start of added functions ------
+function clickRender(event) {
   var click = event.target;
   if (event.target.classList.contains("remove-card")) {
-    var cardDate = Number(event.target.closest(".idea-card").id);
-    for (var i = 0; i<ideas.length; i++) {
-      if (ideas[i].id === cardDate) {
-        ideas.splice(i, 1);
-        displayGallery();
-      }
-    }
-  console.log(ideas);
+    deleteCard();
   }
-}
+  if (event.target.classList.contains("favorite-card")) {
+    favoriteCard();
+  }
+};
 
+function deleteCard() {
+  var cardDate = Number(event.target.closest(".idea-card").id);
+  for (var i = 0; i<ideas.length; i++) {
+    if (ideas[i].id === cardDate) {
+      ideas.splice(i, 1);
+      displayGallery();
+    }
+  }
+console.log(ideas);
+};
+
+
+function favoriteCard() {
+  console.log('this will be a favorite function');
+};
+
+// ------ end of added functions ------
 
 function displayGallery() {
   ideaGallery.innerHTML = "";
