@@ -7,6 +7,9 @@ var submitIdeaButton = document.querySelector("#submit-idea-button");
 var titleInput = document.querySelector("#title-input");
 var bodyInput = document.querySelector("#body-input");
 // var ideaCard = document.querySelector(".idea-card");
+// below two lines for favorite attempt
+var favorite = document.querySelectorAll(".star-filled");
+var unfavorite = document.querySelectorAll(".star-empty");
 
 //Event Listeners
 submitIdeaButton.addEventListener("click", createIdea);
@@ -23,7 +26,7 @@ function createIdea() {
   checkForm();
 };
 
-// ---- can delete the below commented, updated below -----
+// ---- can delete the below commented section, updated code is below that ----
 //
 // function clickRender(event) {
 //   var click = event.target;
@@ -40,7 +43,7 @@ function createIdea() {
 // }
 
 
-// ----- start of added functions ------
+// ----- start of updated functions ------
 function clickRender(event) {
   // var click = event.target;
   if (event.target.classList.contains("remove-card")) {
@@ -69,9 +72,13 @@ function favoriteCard() {
   for (var i = 0; i < ideas.length; i++) {
        if (ideas[i].id === cardID && !ideas[i].isFavorited) {
          ideas[i].isFavorited = true;
+//          cardID.classList.remove('hidden');
+//          cardID.classList.add('hidden');
        }
        else if (ideas[i].id === cardID && ideas[i].isFavorited) {
          ideas[i].isFavorited = false;
+//          cardID.classList.add('hidden');
+//          cardID.classList.remove('hidden');
        }
      }
   console.log(ideas);
@@ -85,7 +92,8 @@ function displayGallery() {
     ideaGallery.innerHTML +=
     `  <div class="idea-card" id="${ideas[i].id}">
           <section class="idea-card-head">
-            <img src="assets/icons/star.svg" alt="star" class="favorite-card">
+            <img src="assets/icons/star.svg" alt="empty star" class="favorite-card">
+            <img src="assets/icons/star-active.svg" alt="filled star" class="star-filled hidden">
             <img src="assets/icons/delete.svg" alt="delete" class="remove-card">
           </section>
           <article class="idea-card-body">
