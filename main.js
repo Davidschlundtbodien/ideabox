@@ -23,8 +23,8 @@ function createIdea() {
   checkForm();
 };
 
-// ---- can delete the below commented, updated belwo -----
-// 
+// ---- can delete the below commented, updated below -----
+//
 // function clickRender(event) {
 //   var click = event.target;
 //   if (event.target.classList.contains("remove-card")) {
@@ -42,7 +42,7 @@ function createIdea() {
 
 // ----- start of added functions ------
 function clickRender(event) {
-  var click = event.target;
+  // var click = event.target;
   if (event.target.classList.contains("remove-card")) {
     deleteCard();
   }
@@ -52,9 +52,9 @@ function clickRender(event) {
 };
 
 function deleteCard() {
-  var cardDate = Number(event.target.closest(".idea-card").id);
+  var cardID = Number(event.target.closest(".idea-card").id);
   for (var i = 0; i<ideas.length; i++) {
-    if (ideas[i].id === cardDate) {
+    if (ideas[i].id === cardID) {
       ideas.splice(i, 1);
       displayGallery();
     }
@@ -62,9 +62,19 @@ function deleteCard() {
 console.log(ideas);
 };
 
-
+//  *** the below toggles isFavorited but doesn't change image yet ***
 function favoriteCard() {
+  var cardID = Number(event.target.closest(".idea-card").id);
   console.log('this will be a favorite function');
+  for (var i = 0; i < ideas.length; i++) {
+       if (ideas[i].id === cardID && !ideas[i].isFavorited) {
+         ideas[i].isFavorited = true;
+       }
+       else if (ideas[i].id === cardID && ideas[i].isFavorited) {
+         ideas[i].isFavorited = false;
+       }
+     }
+  console.log(ideas);
 };
 
 // ------ end of added functions ------
