@@ -37,6 +37,8 @@ function deleteCard() {
   for (var i = 0; i<ideas.length; i++) {
     if (ideas[i].id === cardID) {
       ideas.splice(i, 1);
+      var arrayPayload = JSON.stringify(ideas);
+      localStorage.setItem("userIdeas", arrayPayload);
       displayGallery();
     }
   }
@@ -55,6 +57,8 @@ function favoriteCard() {
          event.target.src = "assets/icons/star.svg";
        }
      }
+     var arrayPayload = JSON.stringify(ideas);
+     localStorage.setItem("userIdeas", arrayPayload);
   console.log(ideas);
 };
 
@@ -62,6 +66,24 @@ function favoriteCard() {
 function displayGallery() {
   ideaGallery.innerHTML = "";
   for (var i = 0; i < ideas.length; i++) {
+    if (ideas[i].isFavorited) {
+      ideaGallery.innerHTML +=
+      `  <div class="idea-card" id="${ideas[i].id}">
+            <section class="idea-card-head">
+              <img src="assets/icons/star-active.svg" alt="filled star" class="favorite-card">
+              <img src="assets/icons/delete.svg" alt="delete" class="remove-card">
+            </section>
+            <article class="idea-card-body">
+              <h4>${ideas[i].title}</h4>
+              <p>${ideas[i].body}</p>
+            </article>
+            <section class="idea-card-foot">
+              <img src="assets/icons/comment.svg" alt="comment">
+              <p>Comment</p>
+            </section>
+        </div>
+      `
+    } else {
     ideaGallery.innerHTML +=
     `  <div class="idea-card" id="${ideas[i].id}">
           <section class="idea-card-head">
@@ -79,6 +101,7 @@ function displayGallery() {
       </div>
     `
   }
+}
 };
 
 function clearValues() {
