@@ -132,7 +132,33 @@ function filterFavorited() {
   if (buttonText.innerText === "Show Starred Ideas") {
     buttonText.innerText = "Show All Ideas";
     console.log(buttonText);
+    displayFilteredGallery();
   } else {
     buttonText.innerText = "Show Starred Ideas";
+    displayGallery();
+  }
+};
+
+function displayFilteredGallery(){
+  ideaGallery.innerHTML = "";
+  for (var i = 0; i < ideas.length; i++) {
+    if (ideas[i].isFavorited) {
+      ideaGallery.innerHTML +=
+      `  <div class="idea-card" id="${ideas[i].id}">
+            <section class="idea-card-head">
+              <img src="assets/icons/star-active.svg" alt="filled star" class="favorite-card">
+              <img src="assets/icons/delete.svg" alt="delete" class="remove-card">
+            </section>
+            <article class="idea-card-body">
+              <h4>${ideas[i].title}</h4>
+              <p>${ideas[i].body}</p>
+            </article>
+            <section class="idea-card-foot">
+              <img src="assets/icons/comment.svg" alt="comment">
+              <p>Comment</p>
+            </section>
+        </div>
+      `
+    }
   }
 };
