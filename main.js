@@ -6,10 +6,6 @@ var ideaGallery = document.querySelector("#idea-gallery");
 var submitIdeaButton = document.querySelector("#submit-idea-button");
 var titleInput = document.querySelector("#title-input");
 var bodyInput = document.querySelector("#body-input");
-// var ideaCard = document.querySelector(".idea-card");
-// below two lines for favorite attempt
-var favorite = document.querySelectorAll(".star-filled");
-var unfavorite = document.querySelectorAll(".star-empty");
 
 //Event Listeners
 submitIdeaButton.addEventListener("click", createIdea);
