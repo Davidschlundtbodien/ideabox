@@ -8,6 +8,7 @@ var titleInput = document.querySelector("#title-input");
 var bodyInput = document.querySelector("#body-input");
 
 //Event Listeners
+window.addEventListener("load", fetchLocalStorage);
 submitIdeaButton.addEventListener("click", createIdea);
 titleInput.addEventListener("keyup", checkForm);
 bodyInput.addEventListener("keyup", checkForm);
@@ -90,5 +91,13 @@ function checkForm() {
     submitIdeaButton.disabled = false;
   } else {
     submitIdeaButton.disabled = true;
+  }
+};
+
+function fetchLocalStorage(){
+  if (localStorage.getItem("userIdeas")) {
+    var response = localStorage.getItem("userIdeas");
+    ideas = JSON.parse(response);
+    displayGallery();
   }
 };

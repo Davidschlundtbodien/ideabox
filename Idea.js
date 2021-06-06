@@ -8,6 +8,8 @@ class Idea {
 
   saveToStorage(array) {
     array.push(this)
+    var arrayPayload = JSON.stringify(array);
+    localStorage.setItem("userIdeas", arrayPayload);
   }
 
   deleteFromStorage(array, idea) {
