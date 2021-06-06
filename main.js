@@ -6,6 +6,7 @@ var ideaGallery = document.querySelector("#idea-gallery");
 var submitIdeaButton = document.querySelector("#submit-idea-button");
 var titleInput = document.querySelector("#title-input");
 var bodyInput = document.querySelector("#body-input");
+var filterFavoritedButton = document.querySelector("#filter-favorited-button");
 
 //Event Listeners
 window.addEventListener("load", fetchLocalStorage);
@@ -13,6 +14,7 @@ submitIdeaButton.addEventListener("click", createIdea);
 titleInput.addEventListener("keyup", checkForm);
 bodyInput.addEventListener("keyup", checkForm);
 ideaGallery.addEventListener("click", clickRender);
+filterFavoritedButton.addEventListener("click", filterFavorited);
 
 //Event Handlers
 function createIdea() {
@@ -122,5 +124,15 @@ function fetchLocalStorage(){
     var response = localStorage.getItem("userIdeas");
     ideas = JSON.parse(response);
     displayGallery();
+  }
+};
+
+function filterFavorited() {
+  var buttonText = filterFavoritedButton.firstElementChild;
+  if (buttonText.innerText === "Show Starred Ideas") {
+    buttonText.innerText = "Show All Ideas";
+    console.log(buttonText);
+  } else {
+    buttonText.innerText = "Show Starred Ideas";
   }
 };
