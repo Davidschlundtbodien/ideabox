@@ -146,3 +146,7 @@ button:disabled {
   margin-block-start: .3em;
   margin-block-end: .3em;
 }
+
+.hidden {
+  display: none;
+}
