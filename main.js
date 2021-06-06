@@ -26,26 +26,7 @@ function createIdea() {
   checkForm();
 };
 
-// ---- can delete the below commented section, updated code is below that ----
-//
-// function clickRender(event) {
-//   var click = event.target;
-//   if (event.target.classList.contains("remove-card")) {
-//     var cardDate = Number(event.target.closest(".idea-card").id);
-//     for (var i = 0; i<ideas.length; i++) {
-//       if (ideas[i].id === cardDate) {
-//         ideas.splice(i, 1);
-//         displayGallery();
-//       }
-//     }
-//   console.log(ideas);
-//   }
-// }
-
-
-// ----- start of updated functions ------
 function clickRender(event) {
-  // var click = event.target;
   if (event.target.classList.contains("remove-card")) {
     deleteCard();
   }
@@ -65,26 +46,21 @@ function deleteCard() {
 console.log(ideas);
 };
 
-//  *** the below toggles isFavorited but doesn't change image yet ***
 function favoriteCard() {
-  var cardID = Number(event.target.closest(".idea-card").id);
-  console.log('this will be a favorite function');
+  var ideaCard = event.target.closest(".idea-card");
   for (var i = 0; i < ideas.length; i++) {
-       if (ideas[i].id === cardID && !ideas[i].isFavorited) {
+       if (ideas[i].id === Number(ideaCard.id) && !ideas[i].isFavorited) {
          ideas[i].isFavorited = true;
-//          cardID.classList.remove('hidden');
-//          cardID.classList.add('hidden');
+         event.target.src = "assets/icons/star-active.svg";
        }
-       else if (ideas[i].id === cardID && ideas[i].isFavorited) {
+       else if (ideas[i].id === Number(ideaCard.id) && ideas[i].isFavorited) {
          ideas[i].isFavorited = false;
-//          cardID.classList.add('hidden');
-//          cardID.classList.remove('hidden');
+         event.target.src = "assets/icons/star.svg";
        }
      }
   console.log(ideas);
 };
 
-// ------ end of added functions ------
 
 function displayGallery() {
   ideaGallery.innerHTML = "";
@@ -93,13 +69,11 @@ function displayGallery() {
     `  <div class="idea-card" id="${ideas[i].id}">
           <section class="idea-card-head">
             <img src="assets/icons/star.svg" alt="empty star" class="favorite-card">
-            <img src="assets/icons/star-active.svg" alt="filled star" class="star-filled hidden">
             <img src="assets/icons/delete.svg" alt="delete" class="remove-card">
           </section>
           <article class="idea-card-body">
             <h4>${ideas[i].title}</h4>
             <p>${ideas[i].body}</p>
-            <p>${ideas[i].id}</p>
           </article>
           <section class="idea-card-foot">
             <img src="assets/icons/comment.svg" alt="comment">
