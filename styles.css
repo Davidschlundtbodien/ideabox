@@ -1,12 +1,14 @@
 * {
   /* border: 2px solid green; */
   font-family: Open Sans;
+
 }
 
 body {
   width: 100%;
   height: 100vh;
   margin: 0px;
+  font-weight: bold;
 }
 
 main {
@@ -40,6 +42,7 @@ aside > h1 {
 
 .filter-ideas > p {
   color: #BFBFDD;
+  font-weight: 600;
   margin: 20px 10px;
 }
 
@@ -47,7 +50,6 @@ aside > h1 {
   color: #E9E9F3;
   background-color: #5356A4;
   width: 90%;
-  font-weight: bolder;
   margin: 0px 10px 20px 10px;
 }
 
@@ -65,9 +67,9 @@ aside > h1 {
 }
 
 .input-form > button {
+  font-weight: bold;
   background-color: #353567;
   color: #E9E9F3;
-  font-weight: bold;
 }
 
 button:disabled {
@@ -78,6 +80,7 @@ button:disabled {
 .body-input {
   display: flex;
   flex-direction: column;
+  color: #353567;
 }
 
 .search-input {
@@ -115,6 +118,7 @@ button:disabled {
 .idea-card-body {
   padding: 10px;
   height: 100%;
+  font-weight: normal;
   background: #FFFFFF;
 }
 
@@ -128,7 +132,6 @@ button:disabled {
   background: #5356A4;
   color: #E9E9F3;
   display: flex;
-  font-weight: bold;
 }
 
 .idea-card-head > img {
