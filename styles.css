@@ -71,6 +71,8 @@ aside > h1 {
 }
 
 .input-form > button {
+  padding: 3% 0%;
+  font-size: 1em;
   font-weight: bold;
   background-color: #353567;
   color: #E9E9F3;
@@ -79,7 +81,7 @@ aside > h1 {
 }
 
 button:disabled {
-  background-color: grey;
+  background-color: #5959a9;
 }
 
 .title-input,
@@ -90,6 +92,8 @@ button:disabled {
 }
 
 .input-field {
+  margin-top: .7em;
+  padding: 1em;
   border: 2px solid #5D5FA8;
   border-radius: 3px;
 }
