@@ -169,10 +169,10 @@ function displayFilteredGallery() {
 function searchIdeas() {
     var input = document.getElementById("search-bar").value.toLowerCase();
     for (i = 0; i < ideas.length; i++) {
-        if (!ideas[i].title.toLowerCase().includes(input)) {
+        if (!ideas[i].title.toLowerCase().includes(input) && !ideas[i].body.toLowerCase().includes(input)) {
           var card = document.getElementById(`${ideas[i].id}`)
           card.classList.add("hidden");
-        } else if (ideas[i].title.toLowerCase().includes(input)) {
+        } else if (ideas[i].title.toLowerCase().includes(input) && ideas[i].body.toLowerCase().includes(input)) {
           card = document.getElementById(`${ideas[i].id}`)
           card.classList.remove("hidden");
         }
