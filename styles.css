@@ -38,6 +38,8 @@ aside > h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    border-top: 2px solid #353567;
+    border-bottom: 2px solid #353567;
 }
 
 .filter-ideas > p {
@@ -51,6 +53,8 @@ aside > h1 {
   background-color: #5356A4;
   width: 90%;
   margin: 0px 10px 20px 10px;
+  border: 1px solid #353567;
+  border-radius: 3px;
 }
 
 .user-form {
@@ -70,6 +74,8 @@ aside > h1 {
   font-weight: bold;
   background-color: #353567;
   color: #E9E9F3;
+  border: 1px solid #5D5FA8;
+  border-radius: 3px
 }
 
 button:disabled {
@@ -83,9 +89,17 @@ button:disabled {
   color: #353567;
 }
 
+.input-field {
+  border: 2px solid #5D5FA8;
+  border-radius: 3px;
+}
+
 .search-input {
   display: flex;
   width: 100%;
+  background: #353567;
+  border: 1px solid #5D5FA8;
+  border-radius: 3px;
 }
 
 .search-input > input {
@@ -95,6 +109,7 @@ button:disabled {
 .search-input > img {
   width: 10%;
   height: auto;
+  margin: 5px;
 }
 
 .idea-gallery {
