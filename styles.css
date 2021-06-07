@@ -125,9 +125,14 @@ button:disabled {
 /* Idea DISPLAY */
 .idea-gallery {
   background-color: #EAEAF4;
-  display: flex;
   height: 60%;
-  gap: 20px;
+  overflow-y: scroll;
+}
+
+.idea-gallery-grid {
+  padding: 25px;
+  display: flex;
+  gap: 25px;
   flex-wrap: wrap;
 }
 
@@ -135,8 +140,8 @@ button:disabled {
 .idea-card {
   display: flex;
   flex-direction: column;
-  max-width: 30%;
-  height: 50%;
+  width: 12.5em;
+  height: 15.5em;
   border: 2px solid #1F1F3D;
   justify-content: space-between;
 
@@ -149,12 +154,12 @@ button:disabled {
 }
 
 .idea-card-head > img {
-  width: 10%;
+  width: 14%;
   height: auto;
 }
 
 .idea-card-body {
-  padding: 10px;
+  padding: 8px;
   height: 100%;
   font-weight: normal;
   background: #FFFFFF;
@@ -165,10 +170,13 @@ button:disabled {
   background: #5356A4;
   color: #E9E9F3;
   display: flex;
+  align-items: center;
+  width: 100%;
+
 }
 
 .idea-card-foot > img {
-  width: 10%;
+  width: 14%;
   height: auto;
 }
 

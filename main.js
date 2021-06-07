@@ -2,7 +2,7 @@
 var ideas = [];
 
 //Query Selectors
-var ideaGallery = document.querySelector("#idea-gallery");
+var ideaGallery = document.querySelector("#idea-gallery-grid");
 var submitIdeaButton = document.querySelector("#submit-idea-button");
 var titleInput = document.querySelector("#title-input");
 var bodyInput = document.querySelector("#body-input");
