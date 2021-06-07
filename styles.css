@@ -1,7 +1,6 @@
+/* GENERAL */
 * {
-  /* border: 2px solid green; */
   font-family: Open Sans;
-
 }
 
 body {
@@ -28,6 +27,11 @@ main > section {
   height: 100%;
 }
 
+.hidden {
+  display: none;
+}
+
+/* SIDE BAR SECTION */
 aside > h1 {
   color: #E9E9F3;
   margin-left: 10px;
@@ -57,6 +61,7 @@ aside > h1 {
   border-radius: 3px;
 }
 
+/* USER FORM SECTION */
 .user-form {
   background-color: #A9AAD2;
   display: flex;
@@ -98,6 +103,7 @@ button:disabled {
   border-radius: 3px;
 }
 
+/* SEARCH BAR */
 .search-input {
   display: flex;
   width: 100%;
@@ -116,6 +122,7 @@ button:disabled {
   margin: 5px;
 }
 
+/* Idea DISPLAY */
 .idea-gallery {
   background-color: #EAEAF4;
   display: flex;
@@ -124,6 +131,7 @@ button:disabled {
   flex-wrap: wrap;
 }
 
+/* Idea Card TEMPLATE */
 .idea-card {
   display: flex;
   flex-direction: column;
@@ -134,29 +142,29 @@ button:disabled {
 
 }
 
-.idea-card-body {
-  padding: 10px;
-  height: 100%;
-  font-weight: normal;
-  background: #FFFFFF;
-  overflow-wrap: break-word; 
-}
-
 .idea-card-head {
   background: #1F1F3D;
   display: flex;
   justify-content: space-between;
 }
 
+.idea-card-head > img {
+  width: 10%;
+  height: auto;
+}
+
+.idea-card-body {
+  padding: 10px;
+  height: 100%;
+  font-weight: normal;
+  background: #FFFFFF;
+  overflow-wrap: break-word;
+}
+
 .idea-card-foot {
   background: #5356A4;
   color: #E9E9F3;
   display: flex;
-}
-
-.idea-card-head > img {
-  width: 10%;
-  height: auto;
 }
 
 .idea-card-foot > img {
@@ -167,8 +175,4 @@ button:disabled {
 .idea-card-foot > p {
   margin-block-start: .3em;
   margin-block-end: .3em;
-}
-
-.hidden {
-  display: none;
 }
