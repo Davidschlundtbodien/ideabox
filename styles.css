@@ -139,6 +139,7 @@ button:disabled {
   height: 100%;
   font-weight: normal;
   background: #FFFFFF;
+  overflow-wrap: break-word; 
 }
 
 .idea-card-head {
