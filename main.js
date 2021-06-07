@@ -6,12 +6,15 @@ var ideaGallery = document.querySelector("#idea-gallery");
 var submitIdeaButton = document.querySelector("#submit-idea-button");
 var titleInput = document.querySelector("#title-input");
 var bodyInput = document.querySelector("#body-input");
+var filterFavoritedButton = document.querySelector("#filter-favorited-button");
 
 //Event Listeners
+window.addEventListener("load", fetchLocalStorage);
 submitIdeaButton.addEventListener("click", createIdea);
 titleInput.addEventListener("keyup", checkForm);
 bodyInput.addEventListener("keyup", checkForm);
 ideaGallery.addEventListener("click", clickRender);
+filterFavoritedButton.addEventListener("click", filterFavorited);
 
 //Event Handlers
 function createIdea() {
@@ -36,6 +39,8 @@ function deleteCard() {
   for (var i = 0; i<ideas.length; i++) {
     if (ideas[i].id === cardID) {
       ideas.splice(i, 1);
+      var arrayPayload = JSON.stringify(ideas);
+      localStorage.setItem("userIdeas", arrayPayload);
       displayGallery();
     }
   }
@@ -54,6 +59,8 @@ function favoriteCard() {
          event.target.src = "assets/icons/star.svg";
        }
      }
+     var arrayPayload = JSON.stringify(ideas);
+     localStorage.setItem("userIdeas", arrayPayload);
   console.log(ideas);
 };
 
@@ -61,6 +68,24 @@ function favoriteCard() {
 function displayGallery() {
   ideaGallery.innerHTML = "";
   for (var i = 0; i < ideas.length; i++) {
+    if (ideas[i].isFavorited) {
+      ideaGallery.innerHTML +=
+      `  <div class="idea-card" id="${ideas[i].id}">
+            <section class="idea-card-head">
+              <img src="assets/icons/star-active.svg" alt="filled star" class="favorite-card">
+              <img src="assets/icons/delete.svg" alt="delete" class="remove-card">
+            </section>
+            <article class="idea-card-body">
+              <h4>${ideas[i].title}</h4>
+              <p>${ideas[i].body}</p>
+            </article>
+            <section class="idea-card-foot">
+              <img src="assets/icons/comment.svg" alt="comment">
+              <p>Comment</p>
+            </section>
+        </div>
+      `
+    } else {
     ideaGallery.innerHTML +=
     `  <div class="idea-card" id="${ideas[i].id}">
           <section class="idea-card-head">
@@ -78,6 +103,7 @@ function displayGallery() {
       </div>
     `
   }
+}
 };
 
 function clearValues() {
@@ -90,5 +116,49 @@ function checkForm() {
     submitIdeaButton.disabled = false;
   } else {
     submitIdeaButton.disabled = true;
+  }
+};
+
+function fetchLocalStorage(){
+  if (localStorage.getItem("userIdeas")) {
+    var response = localStorage.getItem("userIdeas");
+    ideas = JSON.parse(response);
+    displayGallery();
+  }
+};
+
+function filterFavorited() {
+  var buttonText = filterFavoritedButton.firstElementChild;
+  if (buttonText.innerText === "Show Starred Ideas") {
+    buttonText.innerText = "Show All Ideas";
+    console.log(buttonText);
+    displayFilteredGallery();
+  } else {
+    buttonText.innerText = "Show Starred Ideas";
+    displayGallery();
+  }
+};
+
+function displayFilteredGallery(){
+  ideaGallery.innerHTML = "";
+  for (var i = 0; i < ideas.length; i++) {
+    if (ideas[i].isFavorited) {
+      ideaGallery.innerHTML +=
+      `  <div class="idea-card" id="${ideas[i].id}">
+            <section class="idea-card-head">
+              <img src="assets/icons/star-active.svg" alt="filled star" class="favorite-card">
+              <img src="assets/icons/delete.svg" alt="delete" class="remove-card">
+            </section>
+            <article class="idea-card-body">
+              <h4>${ideas[i].title}</h4>
+              <p>${ideas[i].body}</p>
+            </article>
+            <section class="idea-card-foot">
+              <img src="assets/icons/comment.svg" alt="comment">
+              <p>Comment</p>
+            </section>
+        </div>
+      `
+    }
   }
 };
