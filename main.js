@@ -2,11 +2,11 @@
 var ideas = [];
 
 //Query Selectors
-var ideaGallery = document.querySelector("#idea-gallery-grid");
-var submitIdeaButton = document.querySelector("#submit-idea-button");
-var titleInput = document.querySelector("#title-input");
-var bodyInput = document.querySelector("#body-input");
-var filterFavoritedButton = document.querySelector("#filter-favorited-button");
+var ideaGallery = document.querySelector("#ideaGalleryGrid");
+var submitIdeaButton = document.querySelector("#submitIdeaButton");
+var titleInput = document.querySelector("#titleInput");
+var bodyInput = document.querySelector("#bodyInput");
+var filterFavoritedButton = document.querySelector("#filterFavoritedButton");
 
 //Event Listeners
 window.addEventListener("load", fetchLocalStorage);
