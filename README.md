@@ -15,7 +15,15 @@ the close button, at will.
 - CSS
 
 ### Future Additions
--Smoother repopulation of ideas as keys are erased on the search bar.
+- Smoother repopulation of ideas as keys are erased on the search bar.
+- Add more resposive design for small and large screens.
+- Removing scroll bar from gallery section while maintaining the scroll functionality during overflow of idea cards.
+- Character limits on title and body inputs to prevent overflow on card display.
+- Edit Idea cards with in the card itself.
+- Refactor main.js and extract logic to be used in Idea.js (DRY up lengthy functions).
+
+### Known Bugs
+- When the user is viewing cards filtered my "Show Starred Ideas" and un-stars a card the display does not remove that card.
 
 ## [Check it Out](https://davidschlundtbodien.github.io/ideabox/)
 ***************************************
