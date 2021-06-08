@@ -2,12 +2,13 @@
 var ideas = [];
 
 //Query Selectors
-var ideaGallery = document.querySelector("#idea-gallery");
-var submitIdeaButton = document.querySelector("#submit-idea-button");
-var titleInput = document.querySelector("#title-input");
-var bodyInput = document.querySelector("#body-input");
-var filterFavoritedButton = document.querySelector("#filter-favorited-button");
-var searchBar = document.querySelector("#search-bar");
+var ideaGallery = document.querySelector("#ideaGalleryGrid");
+var submitIdeaButton = document.querySelector("#submitIdeaButton");
+var titleInput = document.querySelector("#titleInput");
+var bodyInput = document.querySelector("#bodyInput");
+var filterFavoritedButton = document.querySelector("#filterFavoritedButton");
+var searchBar = document.querySelector("#searchBar");
+
 
 //Event Listeners
 window.addEventListener("load", fetchLocalStorage);
@@ -130,7 +131,7 @@ function fetchLocalStorage(){
 };
 
 function filterFavorited() {
-  var buttonText = filterFavoritedButton.firstElementChild;
+  var buttonText = filterFavoritedButton;
   if (buttonText.innerText === "Show Starred Ideas") {
     buttonText.innerText = "Show All Ideas";
     console.log(buttonText);

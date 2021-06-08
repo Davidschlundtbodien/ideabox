@@ -1,12 +1,13 @@
+/* GENERAL */
 * {
-  /* border: 2px solid green; */
   font-family: Open Sans;
 }
 
 body {
   width: 100%;
   height: 100vh;
-
+  margin: 0px;
+  font-weight: bold;
 }
 
 main {
@@ -26,6 +27,11 @@ main > section {
   height: 100%;
 }
 
+.hidden {
+  display: none;
+}
+
+/* SIDE BAR SECTION */
 aside > h1 {
   color: #E9E9F3;
   margin-left: 10px;
@@ -36,21 +42,29 @@ aside > h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    border-top: 2px solid #353567;
+    border-bottom: 2px solid #353567;
 }
 
 .filter-ideas > p {
   color: #BFBFDD;
+  font-weight: 600;
   margin: 20px 10px;
 }
 
 .filter-ideas > button {
+  font-weight: bolder;
+  font-size: 1.1em;
+  padding: 12px 3px;
   color: #E9E9F3;
   background-color: #5356A4;
   width: 90%;
-  font-weight: bolder;
   margin: 0px 10px 20px 10px;
+  border: 1px solid #353567;
+  border-radius: 3px;
 }
 
+/* USER FORM SECTION */
 .user-form {
   background-color: #A9AAD2;
   display: flex;
@@ -64,25 +78,41 @@ aside > h1 {
   justify-content: space-evenly;
 }
 
-.input-form > button {
-  background-color: #353567;
-  color: #E9E9F3;
-  font-weight: bold;
-}
-
-button:disabled {
-  background-color: grey;
-}
-
 .title-input,
 .body-input {
   display: flex;
   flex-direction: column;
+  color: #353567;
 }
 
+.input-field {
+  margin-top: .7em;
+  padding: .7em;
+  border: 2px solid #5D5FA8;
+  border-radius: 3px;
+}
+
+.input-form > button {
+  padding: 3% 0%;
+  font-size: 1.1em;
+  font-weight: bold;
+  background-color: #353567;
+  color: #E9E9F3;
+  border: 1px solid #5D5FA8;
+  border-radius: 3px
+}
+
+button:disabled {
+  background-color: #5959a9;
+}
+
+/* SEARCH BAR */
 .search-input {
   display: flex;
   width: 100%;
+  background: #353567;
+  border: 1px solid #5D5FA8;
+  border-radius: 3px;
 }
 
 .search-input > input {
@@ -90,33 +120,34 @@ button:disabled {
 }
 
 .search-input > img {
-  width: 10%;
+  width: 7%;
   height: auto;
+  margin: .7em;
 }
 
+/* Idea DISPLAY */
 .idea-gallery {
   background-color: #EAEAF4;
-  display: flex;
   height: 60%;
-  gap: 20px;
-  padding: 20px;
+  overflow-y: scroll;
+}
+
+.idea-gallery-grid {
+  padding: 25px;
+  display: flex;
+  gap: 25px;
   flex-wrap: wrap;
 }
 
+/* Idea Card TEMPLATE */
 .idea-card {
   display: flex;
   flex-direction: column;
-  max-width: 30%;
-  height: 50%;
+  width: 12.5em;
+  height: 15.5em;
   border: 2px solid #1F1F3D;
   justify-content: space-between;
 
-}
-
-.idea-card-body {
-  padding: 10px;
-  height: 100%;
-  background: #FFFFFF;
 }
 
 .idea-card-head {
@@ -125,28 +156,35 @@ button:disabled {
   justify-content: space-between;
 }
 
+.idea-card-head > img {
+  width: 14%;
+  height: auto;
+}
+
+.idea-card-body {
+  padding: 8px;
+  height: 100%;
+  font-weight: normal;
+  background: #FFFFFF;
+  overflow-wrap: break-word;
+  overflow-y: hidden;
+}
+
 .idea-card-foot {
   background: #5356A4;
   color: #E9E9F3;
   display: flex;
-  font-weight: bold;
-}
+  align-items: center;
+  width: 100%;
 
-.idea-card-head > img {
-  width: 10%;
-  height: auto;
 }
 
 .idea-card-foot > img {
-  width: 10%;
+  width: 14%;
   height: auto;
 }
 
 .idea-card-foot > p {
   margin-block-start: .3em;
   margin-block-end: .3em;
-}
-
-.hidden {
-  display: none;
 }
