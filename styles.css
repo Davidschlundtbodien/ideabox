@@ -78,20 +78,6 @@ aside > h1 {
   justify-content: space-evenly;
 }
 
-.input-form > button {
-  padding: 3% 0%;
-  font-size: 1em;
-  font-weight: bold;
-  background-color: #353567;
-  color: #E9E9F3;
-  border: 1px solid #5D5FA8;
-  border-radius: 3px
-}
-
-button:disabled {
-  background-color: #5959a9;
-}
-
 .title-input,
 .body-input {
   display: flex;
@@ -101,9 +87,23 @@ button:disabled {
 
 .input-field {
   margin-top: .7em;
-  padding: 1em;
+  padding: .7em;
   border: 2px solid #5D5FA8;
   border-radius: 3px;
+}
+
+.input-form > button {
+  padding: 3% 0%;
+  font-size: 1.1em;
+  font-weight: bold;
+  background-color: #353567;
+  color: #E9E9F3;
+  border: 1px solid #5D5FA8;
+  border-radius: 3px
+}
+
+button:disabled {
+  background-color: #5959a9;
 }
 
 /* SEARCH BAR */
@@ -120,9 +120,9 @@ button:disabled {
 }
 
 .search-input > img {
-  width: 10%;
+  width: 7%;
   height: auto;
-  margin: 5px;
+  margin: .7em;
 }
 
 /* Idea DISPLAY */
