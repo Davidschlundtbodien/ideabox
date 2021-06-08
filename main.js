@@ -7,6 +7,7 @@ var submitIdeaButton = document.querySelector("#submit-idea-button");
 var titleInput = document.querySelector("#title-input");
 var bodyInput = document.querySelector("#body-input");
 var filterFavoritedButton = document.querySelector("#filter-favorited-button");
+var searchBar = document.querySelector("#search-bar");
 
 //Event Listeners
 window.addEventListener("load", fetchLocalStorage);
@@ -15,6 +16,7 @@ titleInput.addEventListener("keyup", checkForm);
 bodyInput.addEventListener("keyup", checkForm);
 ideaGallery.addEventListener("click", clickRender);
 filterFavoritedButton.addEventListener("click", filterFavorited);
+searchBar.addEventListener("keyup", searchIdeas);
 
 //Event Handlers
 function createIdea() {
@@ -139,7 +141,7 @@ function filterFavorited() {
   }
 };
 
-function displayFilteredGallery(){
+function displayFilteredGallery() {
   ideaGallery.innerHTML = "";
   for (var i = 0; i < ideas.length; i++) {
     if (ideas[i].isFavorited) {
@@ -161,4 +163,18 @@ function displayFilteredGallery(){
       `
     }
   }
+};
+
+
+function searchIdeas() {
+    var input = document.getElementById("search-bar").value.toLowerCase();
+    for (i = 0; i < ideas.length; i++) {
+        if (!ideas[i].title.toLowerCase().includes(input) && !ideas[i].body.toLowerCase().includes(input)) {
+          var card = document.getElementById(`${ideas[i].id}`)
+          card.classList.add("hidden");
+        } else if (ideas[i].title.toLowerCase().includes(input) && ideas[i].body.toLowerCase().includes(input)) {
+          card = document.getElementById(`${ideas[i].id}`)
+          card.classList.remove("hidden");
+        }
+      }
 };
