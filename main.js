@@ -7,7 +7,6 @@ var submitIdeaButton = document.querySelector("#submitIdeaButton");
 var titleInput = document.querySelector("#titleInput");
 var bodyInput = document.querySelector("#bodyInput");
 var filterFavoritedButton = document.querySelector("#filterFavoritedButton");
-var searchBar = document.querySelector("#searchBar");
 
 
 //Event Listeners
@@ -47,7 +46,6 @@ function deleteCard() {
       displayGallery();
     }
   }
-console.log(ideas);
 };
 
 function favoriteCard() {
@@ -64,7 +62,6 @@ function favoriteCard() {
      }
      var arrayPayload = JSON.stringify(ideas);
      localStorage.setItem("userIdeas", arrayPayload);
-  console.log(ideas);
 };
 
 
@@ -134,7 +131,6 @@ function filterFavorited() {
   var buttonText = filterFavoritedButton;
   if (buttonText.innerText === "Show Starred Ideas") {
     buttonText.innerText = "Show All Ideas";
-    console.log(buttonText);
     displayFilteredGallery();
   } else {
     buttonText.innerText = "Show Starred Ideas";
@@ -168,7 +164,7 @@ function displayFilteredGallery() {
 
 
 function searchIdeas() {
-    var input = document.getElementById("search-bar").value.toLowerCase();
+    var input = document.getElementById("searchBar").value.toLowerCase();
     for (i = 0; i < ideas.length; i++) {
         if (!ideas[i].title.toLowerCase().includes(input) && !ideas[i].body.toLowerCase().includes(input)) {
           var card = document.getElementById(`${ideas[i].id}`)
