@@ -53,6 +53,9 @@ aside > h1 {
 }
 
 .filter-ideas > button {
+  font-weight: bolder;
+  font-size: 1.1em;
+  padding: 12px 3px;
   color: #E9E9F3;
   background-color: #5356A4;
   width: 90%;
@@ -164,6 +167,7 @@ button:disabled {
   font-weight: normal;
   background: #FFFFFF;
   overflow-wrap: break-word;
+  overflow-y: hidden;
 }
 
 .idea-card-foot {

@@ -128,7 +128,7 @@ function fetchLocalStorage(){
 };
 
 function filterFavorited() {
-  var buttonText = filterFavoritedButton.firstElementChild;
+  var buttonText = filterFavoritedButton;
   if (buttonText.innerText === "Show Starred Ideas") {
     buttonText.innerText = "Show All Ideas";
     console.log(buttonText);
