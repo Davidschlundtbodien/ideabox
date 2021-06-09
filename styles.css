@@ -27,9 +27,6 @@ main > section {
   height: 100%;
 }
 
-.hidden {
-  display: none;
-}
 
 /* SIDE BAR SECTION */
 aside > h1 {
@@ -187,4 +184,8 @@ button:disabled {
 .idea-card-foot > p {
   margin-block-start: .3em;
   margin-block-end: .3em;
+}
+
+.hidden {
+  display: none;
 }
